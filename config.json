@@ -1,0 +1,8 @@
+{
+  "name" : "Farm Training",
+  "exportId" : "i2KgA8uvTM-wdKSGsn5PEg",
+  "icon" : "👩‍🔬",
+  "requiredAWSConfigs" : [ ],
+  "requiredOAuthApiConfigs" : [ ],
+  "requiredSimpleTokenApis" : [ ]
+}

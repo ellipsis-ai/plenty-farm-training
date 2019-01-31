@@ -1,0 +1,11 @@
+[ {
+  "exportId" : "yLCraJbiQG6pTwDx5iWOQQ",
+  "name" : "daysOld",
+  "paramType" : {
+    "exportId" : "Number",
+    "name" : "Number"
+  },
+  "question" : "What is the expiry threshold in number of days? (e.g. 180)",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+} ]

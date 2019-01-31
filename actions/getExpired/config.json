@@ -1,0 +1,8 @@
+{
+  "exportId" : "6jfLBAM0SOuvd1NKR8GQHA",
+  "name" : "getExpired",
+  "responseTypeId" : "Normal",
+  "canBeMemoized" : false,
+  "isDataType" : false,
+  "isTest" : false
+}

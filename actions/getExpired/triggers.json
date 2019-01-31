@@ -1,0 +1,7 @@
+[ {
+  "text" : "farm training expired",
+  "requiresMention" : true,
+  "isRegex" : false,
+  "caseSensitive" : false,
+  "triggerType" : "MessageSent"
+} ]
