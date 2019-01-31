@@ -1,3 +1,3 @@
-```
+# Expired trainings:
+
 {successResult}
-```

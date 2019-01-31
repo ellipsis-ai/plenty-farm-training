@@ -1,8 +1,9 @@
-function(daysOld, ellipsis) {
+function(ellipsis) {
   const client = require('google-client')(ellipsis);
 const {google} = ellipsis.require('googleapis@36.0.0');
 const sheets = google.sheets('v4');
 const Matrix = require('Matrix');
+const Training = require('Training');
 
 client.authorize().then(() => {
   return sheets.spreadsheets.values.get({
@@ -22,7 +23,7 @@ client.authorize().then(() => {
     });
   }
   const matrix = new Matrix(rows);
-  const trainings = matrix.getOldTrainings(daysOld);
-  ellipsis.success(require('util').inspect(trainings));
+  const trainings = matrix.getOldTrainings(180);
+  ellipsis.success(Training.formatList(trainings));
 });
 }
