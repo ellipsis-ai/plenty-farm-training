@@ -30,10 +30,10 @@ client.authorize().then(() => {
   const formattedList = Training.formatList(trainings);
   const warnings = Training.validateList(trainings);
   const thresholdDate = moment.tz(ellipsis.team.timeZone).subtract(THRESHOLD_IN_DAYS, 'days').format('M/D/YYYY');
-  const peopleHeading = peopleCount === 1 ? "1 person" : `${peopleCount} people`;
+  const peopleHeading = peopleCount === 1 ? "1 team member" : `${peopleCount} team members`;
   const heading = trainings.length === 1 ?
-    `1 expired training for ${peopleHeading}` :
-    `${trainings.length} expired trainings for ${peopleHeading}`;
+    `1 training session has expired for ${peopleHeading}` :
+    `${trainings.length} training sessions have expired for ${peopleHeading}`;
   ellipsis.success({
     thresholdDate: thresholdDate,
     hasExpiredTrainings: trainings.length > 0,

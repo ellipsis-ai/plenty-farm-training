@@ -1,11 +1,11 @@
-Searched for trainings that occurred before {successResult.thresholdDate}.
+Searched for training sessions that occurred before {successResult.thresholdDate}.
 
 {if successResult.hasExpiredTrainings}
 _{successResult.expiryHeading}:_
 
 {successResult.expiredString}
 {else}
-No expired trainings found.
+No expired training sessions found.
 {endif}
 {if successResult.hasWarnings}
 
