@@ -1,4 +1,4 @@
-function(ellipsis) {
+function(sendNotifications, ellipsis) {
   const client = require('google-client')(ellipsis);
 const {google} = ellipsis.require('googleapis@36.0.0');
 const sheets = google.sheets('v4');
@@ -34,6 +34,19 @@ client.authorize().then(() => {
   const heading = trainings.length === 1 ?
     `1 training session has expired for ${peopleHeading}` :
     `${trainings.length} training sessions have expired for ${peopleHeading}`;
+  const options = {};
+  if (sendNotifications) {
+    options.next = {
+      actionName: "notifyList",
+      args: [{
+        name: "trainingListData",
+        value: JSON.stringify(trainings)
+      }, {
+        name: "notificationCount",
+        value: "0"
+      }]
+    };
+  }
   ellipsis.success({
     thresholdDate: thresholdDate,
     hasExpiredTrainings: trainings.length > 0,
@@ -41,6 +54,6 @@ client.authorize().then(() => {
     hasWarnings: warnings.length > 0,
     expiredString: formattedList,
     warningString: warnings.join("\n")
-  });
+  }, options);
 });
 }

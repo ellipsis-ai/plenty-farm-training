@@ -1,11 +1,41 @@
 [ {
-  "exportId" : "yLCraJbiQG6pTwDx5iWOQQ",
-  "name" : "daysOld",
+  "exportId" : "RQOmFXuFQmGGE3bLUy1dxQ",
+  "name" : "notificationCount",
   "paramType" : {
     "exportId" : "Number",
     "name" : "Number"
   },
-  "question" : "What is the expiry threshold in number of days? (e.g. 180)",
+  "question" : "What is the value for `notificationCount`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "SL4nfncdRjWSkeCEulkFNg",
+  "name" : "sendNotifications",
+  "paramType" : {
+    "exportId" : "Yes/No",
+    "name" : "Yes/No"
+  },
+  "question" : "Should I send notifications to each person who has expired sessions?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "lWyD-60uQuWXXY5kB2tS1Q",
+  "name" : "trainingListData",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `trainingListData`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "qY2gi8m_T6WF4G8H7NIp9Q",
+  "name" : "trainingListData",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `trainingListData`?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 } ]
