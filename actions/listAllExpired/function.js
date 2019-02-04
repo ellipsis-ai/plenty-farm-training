@@ -25,10 +25,13 @@ client.authorize().then(() => {
     });
   }
   const matrix = new Matrix(rows);
-  const trainings = matrix.getOldTrainings(THRESHOLD_IN_DAYS);
+  const today = moment.tz(ellipsis.team.timeZone).startOf('day');
+  const trainings = matrix.getOldTrainings(THRESHOLD_IN_DAYS, today, ellipsis.team.timeZone);
+  const matrixWarnings = matrix.validateTrainingDates();
   const peopleCount = new Set(trainings.map((ea) => ea.email)).size;
   const formattedList = Training.formatList(trainings);
-  const warnings = Training.validateList(trainings);
+  const trainingDataWarnings = Training.validateList(trainings);
+  const warnings = matrixWarnings.concat(trainingDataWarnings);
   const thresholdDate = moment.tz(ellipsis.team.timeZone).subtract(THRESHOLD_IN_DAYS, 'days').format('M/D/YYYY');
   const peopleHeading = peopleCount === 1 ? "1 team member" : `${peopleCount} team members`;
   const heading = trainings.length === 1 ?
