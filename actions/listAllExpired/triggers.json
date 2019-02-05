@@ -4,4 +4,10 @@
   "isRegex" : false,
   "caseSensitive" : false,
   "triggerType" : "MessageSent"
+}, {
+  "text" : "farm training with notifications:{sendNotifications} list all expired",
+  "requiresMention" : true,
+  "isRegex" : false,
+  "caseSensitive" : false,
+  "triggerType" : "MessageSent"
 } ]

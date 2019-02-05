@@ -1,30 +1,10 @@
 function(sendNotifications, ellipsis) {
-  const client = require('google-client')(ellipsis);
-const {google} = ellipsis.require('googleapis@36.0.0');
-const sheets = google.sheets('v4');
-const Matrix = require('Matrix');
+  const Matrix = require('Matrix');
 const Training = require('Training');
 const moment = require('moment-timezone');
 const THRESHOLD_IN_DAYS = 180;
 
-client.authorize().then(() => {
-  return sheets.spreadsheets.values.get({
-    spreadsheetId: ellipsis.env.SSF_FARM_TRAINING_SHEET_ID,
-    range: ellipsis.env.SSF_FARM_TRAINING_SHEET_NAME,
-    auth: client
-  }).catch((err) => {
-    throw new ellipsis.Error(err, {
-      userMessage: "An error occurred while trying to read the SSF Farm Training matrix"
-    });
-  });
-}).then((result) => {
-  const rows = result.data.values;
-  if (!rows || !rows.length) {
-    throw new ellipsis.Error("Couldn't retrieve spreadsheet rows to update: unexpected sheet object.", {
-      userMessage: "No data was found in the SSF Farm training spreadsheet"
-    });
-  }
-  const matrix = new Matrix(rows);
+Matrix.loadData(ellipsis).then((matrix) => {
   const today = moment.tz(ellipsis.team.timeZone).startOf('day');
   const trainings = matrix.getOldTrainings(THRESHOLD_IN_DAYS, today, ellipsis.team.timeZone);
   const matrixWarnings = matrix.validateTrainingDates();
