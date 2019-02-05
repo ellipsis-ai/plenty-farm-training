@@ -19,12 +19,12 @@ test('Matrix', (t) => {
 
   const matrixWarnings = matrix.validateTrainingDates();
   t.equal(matrixWarnings.length, 1, "1 matrix date warning");
-  t.assert(matrixWarnings[0].includes(" Y122"), "Warning is for cell Y122");
+  t.assert(matrixWarnings[0].includes(" Q122"), "Warning is for cell Q122");
 
   const trainingWarnings = Training.validateList(oldTrainings);
   t.equal(trainingWarnings.length, 3, "3 training data validation warnings");
-  t.assert(trainingWarnings[0].includes(" AV96"), "Warning #1 is for cell AV96");
-  t.assert(trainingWarnings[1].includes(" AV140"), "Warning #2 is for cell AV140");
-  t.assert(trainingWarnings[2].includes(" AV141"), "Warning #3 is for cell AV141");
+  t.assert(trainingWarnings[0].includes(" AH96"), "Warning #1 is for cell AH96");
+  t.assert(trainingWarnings[1].includes(" AH140"), "Warning #2 is for cell AH140");
+  t.assert(trainingWarnings[2].includes(" AH141"), "Warning #3 is for cell AH141");
 });
 }
