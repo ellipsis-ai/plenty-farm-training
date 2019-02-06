@@ -1,0 +1,13 @@
+[ {
+  "text" : "farm training get my notifications",
+  "requiresMention" : true,
+  "isRegex" : false,
+  "caseSensitive" : false,
+  "triggerType" : "MessageSent"
+}, {
+  "text" : "farm training show my notifications",
+  "requiresMention" : true,
+  "isRegex" : false,
+  "caseSensitive" : false,
+  "triggerType" : "MessageSent"
+} ]
