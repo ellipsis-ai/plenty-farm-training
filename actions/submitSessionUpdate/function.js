@@ -7,6 +7,7 @@ const api = new EllipsisApi(ellipsis).actions;
 const training = Training.fromProps(session).clone({
   date: mdy
 });
+const managerId = ellipsis.env.SSF_FARM_TRAINING_MANAGER_ID;
 api.run({
   actionName: "announceSessionUpdate",
   channel: ellipsis.env.SSF_FARM_TRAINING_ALERT_CHANNEL,
@@ -20,7 +21,8 @@ api.run({
 }).then(() => {
   ellipsis.success({
     sessionName: session.label,
-    newDate: mdy
+    newDate: mdy,
+    managerId: managerId
   }, {
     choices: [{
       actionName: "submitSessionUpdate",
