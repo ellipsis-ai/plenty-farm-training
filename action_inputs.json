@@ -9,6 +9,26 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
+  "exportId" : "7WGStJhxQRGef8UlTEBKsw",
+  "name" : "user",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `user`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "HiKMJpl9Rve3NqTsPT_qMQ",
+  "name" : "trainingData",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `trainingData`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "OE4EWkJGSVytjaSVTpqQlw",
   "name" : "date",
   "paramType" : {
@@ -36,6 +56,16 @@
     "name" : "Yes/No"
   },
   "question" : "Should I send notifications to each person who has expired sessions?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
+  "exportId" : "flWj9k7gT7WPp0uJhnwc3Q",
+  "name" : "trainingData",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `trainingData`?",
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {

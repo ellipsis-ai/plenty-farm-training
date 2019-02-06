@@ -24,10 +24,11 @@ Matrix.loadData(ellipsis).then((matrix) => {
     }).join("\n");
     const matchResult = matches.map((ea) => {
       const label = `${ea.formatTopic()} (${ea.date})`;
-      return {
+      const obj = Object.assign({}, ea, {
         id: ea.cellLabel,
         label: label
-      };
+      });
+      return obj;
     });
     return api.say({
       message: `${heading}
