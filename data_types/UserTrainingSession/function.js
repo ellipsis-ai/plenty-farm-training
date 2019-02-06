@@ -23,7 +23,7 @@ Matrix.loadData(ellipsis).then((matrix) => {
   } else {
     const heading = matches.length === 1 ? "There is 1 expired training session on file for you:" : `There are ${matches.length} expired training sessions on file for you:`;
     const matchList = matches.map((ea, index) => {
-      return `${index + 1}. ${ea.category ? `**${ea.category}**: ` : ""}${ea.formatTopic()} (last completed ${ea.date})`;
+      return `${index + 1}. ${ea.formatCategoryTopicDate()}`;
     }).join("\n");
     const matchResult = matches.map((ea) => {
       const label = `${ea.formatTopic()}`;
@@ -33,14 +33,7 @@ Matrix.loadData(ellipsis).then((matrix) => {
       });
       return obj;
     });
-    return api.say({
-      message: `${heading}
-${matchList}`
-    }).then(() => {
-      ellipsis.success(matchResult);
-    }).catch(() => { // Ignore errors from say() since it's not strictly necessary
-      ellipsis.success(matchResult);
-    });
+    ellipsis.success(matchResult);
   }
 });
 }

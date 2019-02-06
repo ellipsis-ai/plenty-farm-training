@@ -25,9 +25,13 @@ api.run({
     managerId: managerId
   }, {
     choices: [{
-      actionName: "submitSessionUpdate",
+      actionName: "checkUserListAndUpdate",
       label: "Update another session date",
-      allowMultipleSelections: true
+      allowMultipleSelections: true,
+      args: [{
+        name: "trainingListData",
+        value: "[]"
+      }]
     }]
   });
 });

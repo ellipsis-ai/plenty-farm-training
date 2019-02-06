@@ -79,6 +79,16 @@
   "isSavedForTeam" : false,
   "isSavedForUser" : false
 }, {
+  "exportId" : "lX0wWYWKRB2qdSDZTJ7Jww",
+  "name" : "trainingListData",
+  "paramType" : {
+    "exportId" : "Text",
+    "name" : "Text"
+  },
+  "question" : "What is the value for `trainingListData`?",
+  "isSavedForTeam" : false,
+  "isSavedForUser" : false
+}, {
   "exportId" : "qY2gi8m_T6WF4G8H7NIp9Q",
   "name" : "trainingListData",
   "paramType" : {

@@ -1,9 +1,11 @@
-function(ellipsis) {
+function(trainingListData, ellipsis) {
   const EllipsisApi = require('ellipsis-api');
 const Training = require('Training');
 const Matrix = require('Matrix');
 const email = ellipsis.event.user.email;
 const moment = require('moment-timezone');
+const trainings = Training.listFromString(trainingListData);
+
 if (!email) {
   ellipsis.error("No email address available for user while searching for training sessions", {
     userMessage: "An error occurred while searching for training sessions. Perhaps your email address is not set properly in your profile?"
@@ -15,18 +17,16 @@ Matrix.loadData(ellipsis).then((matrix) => {
   const matches = matrix.getOldTrainings(Training.EXPIRY_THRESHOLD_IN_DAYS, today, ellipsis.team.timeZone).filter((training) => {
     return training.email === email;
   });
-  if (matches.length > 0) {
-    ellipsis.success("Preparing your farm training session notifications…", {
-      next: {
-        actionName: "notifyUser",
-        args: [{
-          name: "trainingListData",
-          value: JSON.stringify(matches)
-        }]
-      }
-    });
-  } else {
-    ellipsis.success("You have no farm training session notifications.");
+  let result = '';
+  if (!matches.every((match, index) => match.isEqualTo(trainings[index]))) {
+    result = `Here is an updated list of expired training sessions:
+
+${matches.map((ea, index) => `${index + 1}. ${ea.formatCategoryTopicDate()}`).join("\n")}`;
   }
+  ellipsis.success(result, {
+    next: {
+      actionName: "submitSessionUpdate"
+    }
+  });
 });
 }

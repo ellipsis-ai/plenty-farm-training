@@ -7,12 +7,16 @@ const heading = sessionCount === 1 ?
   `This is a notification that you have ${sessionCount} expired training sessions`;
 ellipsis.success({
   heading: heading,
-  list: trainingList.map((ea) => ea.formatTopicAndDate()).join("\n")
+  list: trainingList.map((ea, index) => `${index + 1}. ${ea.formatCategoryTopicDate()}`).join("\n")
 }, {
   choices: [{
-    actionName: "submitSessionUpdate",
+    actionName: "checkUserListAndUpdate",
     label: "Update session date",
-    allowMultipleSelections: true
+    allowMultipleSelections: true,
+    args: [{
+      name: "trainingListData",
+      value: JSON.stringify(trainingList)
+    }]
   }]
 });
 }
