@@ -8,5 +8,11 @@ const heading = sessionCount === 1 ?
 ellipsis.success({
   heading: heading,
   list: trainingList.map((ea) => ea.formatTopicAndDate()).join("\n")
+}, {
+  choices: [{
+    actionName: "submitSessionUpdate",
+    label: "Update session date",
+    allowMultipleSelections: true
+  }]
 });
 }

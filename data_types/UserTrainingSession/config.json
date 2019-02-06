@@ -1,0 +1,12 @@
+{
+  "exportId" : "vfk_t7EwSI2RDLp0id9j7A",
+  "name" : "UserTrainingSession",
+  "responseTypeId" : "Normal",
+  "canBeMemoized" : false,
+  "isDataType" : true,
+  "isTest" : false,
+  "dataTypeConfig" : {
+    "fields" : [ ],
+    "usesCode" : true
+  }
+}
