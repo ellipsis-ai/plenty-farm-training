@@ -1,4 +1,4 @@
-function(session, date, sheet, ellipsis) {
+function(sheet, session, date, ellipsis) {
   const moment = require('moment-timezone');
 const Training = require('Training');
 const mdy = moment(date).format(Training.DATE_FORMAT);

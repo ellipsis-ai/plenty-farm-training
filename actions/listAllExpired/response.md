@@ -1,4 +1,4 @@
-Searched for training sessions that occurred before {successResult.thresholdDate}.
+Searched for training sessions that occurred before {successResult.thresholdDate} for **{sheet.name}**.
 
 {if successResult.hasExpiredTrainings}
 _{successResult.expiryHeading}:_

@@ -2,7 +2,7 @@ function(trainingData, user, sheet, ellipsis) {
   const Training = require('Training');
 const training = Training.fromString(trainingData);
 ellipsis.success(`
-${user} submitted a new date for a completed training session:
+${user} submitted a new date for a completed training session for **${sheet.name}**:
 
 ${training.formatTopicAndDate()}
 `, {

@@ -19,7 +19,7 @@ Matrix.loadData(ellipsis, sheet.name).then((matrix) => {
   });
   let result = '';
   if (!matches.every((match, index) => match.isEqualTo(trainings[index]))) {
-    result = `Here is an updated list of expired training sessions:
+    result = `Here is an updated list of expired training sessions for **${sheet.name}**:
 
 ${matches.map((ea, index) => `${index + 1}. ${ea.formatCategoryTopicDate()}`).join("\n")}`;
   }
