@@ -1,4 +1,4 @@
-function(trainingData, user, ellipsis) {
+function(trainingData, user, sheet, ellipsis) {
   const Training = require('Training');
 const training = Training.fromString(trainingData);
 ellipsis.success(`
@@ -13,6 +13,9 @@ ${training.formatTopicAndDate()}
     args: [{
       name: "trainingData",
       value: trainingData
+    }, {
+      name: "sheet",
+      value: sheet.name
     }]
   }]
 });

@@ -1,4 +1,4 @@
-function(trainingListData, ellipsis) {
+function(trainingListData, sheet, ellipsis) {
   const Training = require('Training');
 const trainingList = Training.listFromString(trainingListData);
 const sessionCount = trainingList.length;
@@ -16,6 +16,9 @@ ellipsis.success({
     args: [{
       name: "trainingListData",
       value: JSON.stringify(trainingList)
+    }, {
+      name: "sheet",
+      value: sheet.name
     }]
   }]
 });

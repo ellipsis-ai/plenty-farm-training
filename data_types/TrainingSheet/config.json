@@ -1,0 +1,12 @@
+{
+  "exportId" : "vgzpa87QQzqNm7ntNetTNg",
+  "name" : "TrainingSheet",
+  "responseTypeId" : "Normal",
+  "canBeMemoized" : false,
+  "isDataType" : true,
+  "isTest" : false,
+  "dataTypeConfig" : {
+    "fields" : [ ],
+    "usesCode" : true
+  }
+}

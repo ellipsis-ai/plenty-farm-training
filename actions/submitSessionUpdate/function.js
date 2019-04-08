@@ -1,4 +1,4 @@
-function(session, date, ellipsis) {
+function(session, date, sheet, ellipsis) {
   const moment = require('moment-timezone');
 const Training = require('Training');
 const mdy = moment(date).format(Training.DATE_FORMAT);
@@ -17,6 +17,9 @@ api.run({
   }, {
     name: "user",
     value: ellipsis.event.user.formattedLink
+  }, {
+    name: "sheet",
+    value: sheet.name
   }]
 }).then(() => {
   ellipsis.success({
@@ -31,6 +34,9 @@ api.run({
       args: [{
         name: "trainingListData",
         value: "[]"
+      }, {
+        name: "sheet",
+        value: sheet.name
       }]
     }]
   });
