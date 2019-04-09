@@ -1,4 +1,4 @@
-function(trainingListData, notificationCount, ellipsis) {
+function(trainingListData, notificationCount, sheet, ellipsis) {
   const EllipsisApi = require('ellipsis-api');
 const Training = require('Training');
 const inspect = require('util').inspect;
@@ -32,6 +32,9 @@ new Promise((resolve, reject) => {
     args: [{
       name: "trainingListData",
       value: JSON.stringify(trainingGroup.trainings)
+    }, {
+      name: "sheet",
+      value: sheet.name
     }]
   }); 
 }).catch((err) => {
@@ -55,6 +58,9 @@ ${inspect(remainingList)}`, {
       }, {
         name: "notificationCount",
         value: String(notificationCount)
+      }, {
+        name: "sheet",
+        value: sheet.name
       }]
     }
   } else if (remainingList.length === 0) {

@@ -1,9 +1,9 @@
-function(sendNotifications, ellipsis) {
+function(sendNotifications, sheet, ellipsis) {
   const Matrix = require('Matrix');
 const Training = require('Training');
 const moment = require('moment-timezone');
 
-Matrix.loadData(ellipsis).then((matrix) => {
+Matrix.loadData(ellipsis, sheet.name).then((matrix) => {
   const today = moment.tz(ellipsis.team.timeZone).startOf('day');
   const trainings = matrix.getOldTrainings(Training.EXPIRY_THRESHOLD_IN_DAYS, today, ellipsis.team.timeZone);
   const matrixWarnings = matrix.validateTrainingDates();
@@ -26,6 +26,9 @@ Matrix.loadData(ellipsis).then((matrix) => {
       }, {
         name: "notificationCount",
         value: "0"
+      }, {
+        name: "sheet",
+        value: sheet.name
       }]
     };
   }

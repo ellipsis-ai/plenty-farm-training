@@ -1,4 +1,4 @@
-function(ellipsis) {
+function(sheet, ellipsis) {
   const EllipsisApi = require('ellipsis-api');
 const Training = require('Training');
 const Matrix = require('Matrix');
@@ -10,7 +10,7 @@ if (!email) {
   });
 }
 
-Matrix.loadData(ellipsis).then((matrix) => {
+Matrix.loadData(ellipsis, sheet.name).then((matrix) => {
   const today = moment.tz(ellipsis.team.timeZone).startOf('day');
   const matches = matrix.getOldTrainings(Training.EXPIRY_THRESHOLD_IN_DAYS, today, ellipsis.team.timeZone).filter((training) => {
     return training.email === email;
@@ -22,6 +22,9 @@ Matrix.loadData(ellipsis).then((matrix) => {
         args: [{
           name: "trainingListData",
           value: JSON.stringify(matches)
+        }, {
+          name: "sheet",
+          value: sheet.name
         }]
       }
     });
