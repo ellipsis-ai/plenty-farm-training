@@ -6,7 +6,7 @@ const training = Training.fromString(trainingData);
 const managerId = ellipsis.env.SSF_FARM_TRAINING_MANAGER_ID;
 api.run({
   actionName: "announceSessionUpdate",
-  channel: ellipsis.env.SSF_FARM_TRAINING_ALERT_CHANNEL,
+  channel: sheet.channel,
   args: [{
     name: "trainingData",
     value: JSON.stringify(training)
