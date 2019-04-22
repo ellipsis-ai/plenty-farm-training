@@ -15,7 +15,7 @@ test('Matrix', (t) => {
   const matrix = new Matrix(testData);
   const pretendToday = moment.tz("2019-02-04", "YYYY-MM-DD", "UTC").startOf('day');
   const oldTrainings = matrix.getOldTrainings(180, pretendToday, "UTC");
-  t.equal(oldTrainings.length, 75, "75 expired training sessions");
+  t.equal(oldTrainings.length, 74, "74 expired training sessions");
 
   const matrixWarnings = matrix.validateTrainingDates();
   t.equal(matrixWarnings.length, 1, "1 matrix date warning");
