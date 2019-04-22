@@ -11,7 +11,6 @@ Matrix.loadData(ellipsis, sheet.name).then((matrix) => {
   const formattedList = Training.formatList(trainings);
   const trainingDataWarnings = Training.validateList(trainings);
   const warnings = matrixWarnings.concat(trainingDataWarnings);
-  const thresholdDate = moment.tz(ellipsis.team.timeZone).subtract(Training.EXPIRY_THRESHOLD_IN_DAYS, 'days').format('M/D/YYYY');
   const peopleHeading = peopleCount === 1 ? "1 team member" : `${peopleCount} team members`;
   const heading = trainings.length === 1 ?
     `1 training session has expired for ${peopleHeading}` :
@@ -33,7 +32,6 @@ Matrix.loadData(ellipsis, sheet.name).then((matrix) => {
     };
   }
   ellipsis.success({
-    thresholdDate: thresholdDate,
     hasExpiredTrainings: trainings.length > 0,
     expiryHeading: heading,
     hasWarnings: warnings.length > 0,
