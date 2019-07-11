@@ -27,6 +27,7 @@ api.run({
       actionName: "checkUserListAndUpdate",
       label: "Update another session date",
       allowMultipleSelections: true,
+      allowOthers: true,
       args: [{
         name: "trainingListData",
         value: "[]"

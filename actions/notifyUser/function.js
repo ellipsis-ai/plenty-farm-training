@@ -13,6 +13,7 @@ ellipsis.success({
     actionName: "checkUserListAndUpdate",
     label: "Update session date",
     allowMultipleSelections: true,
+    allowOthers: true,
     args: [{
       name: "trainingListData",
       value: JSON.stringify(trainingList)
